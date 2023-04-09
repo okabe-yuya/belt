@@ -28,7 +28,7 @@ defmodule Manager do
       {:ok, value} ->
         send(children["Plugins.Saver"], {:value, self(), value})
         send(children["Plugins.Viewer"], {:value, self(), value})
-        Process.sleep(500)
+        Process.sleep(100)
         process(children, pid_queue)
 
       {:empty, _} ->
